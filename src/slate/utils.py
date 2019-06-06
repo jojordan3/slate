@@ -12,4 +12,4 @@ def normalise_whitespace(s):
     >>> normalise_whitespace('meh\n\n\f')
     'meh '
     """
-    return re.sub(r'\s+', ' ', s) 
+    return re.sub(r'\s+', ' ', s)

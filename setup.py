@@ -3,11 +3,7 @@
 from setuptools import setup, find_packages
 
 import sys
-PYTHON_3 = sys.version_info[0] == 3
-if PYTHON_3:
-    pdfminer = 'pdfminer3k'
-else:
-    pdfminer = 'pdfminer'
+
 
 with open('README') as f:
     long_description = f.read()
@@ -22,14 +18,20 @@ setup(name='slate',
       exclude_package_data={'': ['.gitignore']},
       packages=find_packages('src'),
       package_dir={'': 'src'},
-      requires=[pdfminer],
-      install_requires=['setuptools', pdfminer],
+      requires=['pdfminer.six', 'chardet'],
+      install_requires=['setuptools', 'pdfminer.six'],
       classifiers= [
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Office/Business',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Text Processing',

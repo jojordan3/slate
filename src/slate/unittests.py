@@ -1,6 +1,10 @@
 import unittest
 
-from slate import PDF
+try:
+    from .classes import PDF
+except ImportError:
+    from classes import PDF
+
 
 class TestSlate(unittest.TestCase):
     def setUp(self):
